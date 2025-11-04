@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estatísticas da Empresa</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    main {
+      padding: 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 3em;
+    }
+
+    canvas {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 1em;
+      max-width: 100%;
+    }
+
+    h2 {
+      color: #004080;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Estatísticas da Empresa</h1>
+  </header>
+
+  <main>
+    <section>
+      <article>
+        <h2>Faturamento Mensal</h2>
+        <canvas id="graficoFaturamento" width="600" height="300"></canvas>
+      </article>
+    </section>
+
+    <section>
+      <article>
+        <h2>Distribuição de Clientes</h2>
+        <canvas id="graficoClientes" width="600" height="300"></canvas>
+      </article>
+    </section>
+
+    <section>
+      <article>
+        <h2>Vendas por Produto</h2>
+        <canvas id="graficoProdutos" width="600" height="300"></canvas>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    new Chart(document.getElementById('graficoFaturamento'), {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'],
+        datasets: [{
+          label: 'Faturamento (R$)',
+          data: [1200, 1000, 1000, 900, 1300, 1500, 780],
+          borderColor: 'blue',
+          fill: false
+        }]
+      }
+    });
+
+    new Chart(document.getElementById('graficoClientes'), {
+      type: 'pie',
+      data: {
+        labels: ['SP', 'RJ', 'MG', 'Outros'],
+        datasets: [{
+          label: 'Clientes por Região',
+          data: [40, 25, 20, 15],
+          backgroundColor: ['#3366cc', '#dc3912', '#ff9900', '#109618']
+        }]
+      }
+    });
+
+    new Chart(document.getElementById('graficoProdutos'), {
+      type: 'bar',
+      data: {
+        labels: ['Produto A', 'Produto B', 'Produto C', 'Produto D'],
+        datasets: [{
+          label: 'Unidades Vendidas',
+          data: [500, 300, 700, 400],
+          backgroundColor: '#004080'
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,34 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Entrega - Máquinas de Costura</title>
-  <link rel="stylesheet" href="../assets/css/styleglobal.css">
 </head>
 <body>
-<header>
-    <div class="logo">MMC - Máquinas de Costura</div>
-    
-    <nav id="nav"> <button id="btn-mobile" aria-expanded="false" aria-controls="menu" aria-haspopup="true">
-        Menu
-        <span id="hamburger-icon"></span> </button>
-      
-     <ul id="menu"> <li><a href="../Home.html">Home</a></li>
-        <li><a href="../pages/Sobre Nós.html">Sobre Nós</a></li>
-        <li><a href="../pages/Compra.html">Produtos</a></li>
-        <li><a href="../pages/Estatisticas da empresa.html">Estatísticas</a></li>
-        <li><a href="../pages/Formulário.html">Contato</a></li>
-        <li><a href="../pages/Cadastro.html">Cadastro</a></li>
-        <li><a href="../pages/Login.html" class="btn btn-login">Entrar / Login</a></li>
-      </ul>
-    </nav>
+  <header>
+    <h1>MMC - Maquinas de Costura</h1>
+    <p>Formulário de Entrega</p>
   </header>
-  <main class="main-compact">
-    <h1>Formulário de Entrega</h1>
 
-    <form action="#" method="post">
-      
+  <main>
+    <section aria-labelledby="dados-pessoais">
+      <h2 id="dados-pessoais">Dados do Cliente</h2>
+      <form action="#" method="post">
         <div>
           <label for="nome">Nome Completo:</label>
           <input type="text" id="nome" name="nome" required>
@@ -43,8 +30,8 @@
           <label for="telefone">Telefone:</label>
           <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
         </div>
-      
-        
+
+        <h2>Endereço de Entrega</h2>
         <div>
           <label for="endereco">Endereço:</label>
           <input type="text" id="endereco" name="endereco" required>
@@ -58,34 +45,11 @@
         <div>
           <label for="estado">Estado:</label>
           <select id="estado" name="estado" required>
-            <option value="">Selecione seu estado...</option>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
+            <option value="">Selecione...</option>
             <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="RS">Rio Grande do Sul</option>
           </select>
         </div>
 
@@ -93,45 +57,31 @@
           <label for="cep">CEP:</label>
           <input type="text" id="cep" name="cep" placeholder="00000-000" required>
         </div>
-      
+
+        <h2>Detalhes do Pedido</h2>
         <div>
           <label for="modelo">Modelo da Máquina:</label>
           <select id="modelo" name="modelo" required>
-            <option value="">Selecione o Modelo Desejado...</option>
-            <option value="jack-f4">Jack F4</option>
-            <option value="singer-ultralock-14sh754">Singer UltraLock 14SH754</option>
-            <option value="brother-pe810l">Brother PE810L</option>
-            <option value="brother-2340cv">Brother 2340CV</option>
-            <option value="singer-start-1306">Singer Start 1306</option>
-            <option value="jack-h2-transporte-duplo">Jack H2 (Transporte Duplo)</option>
-            <option value="jack-jk-t781g-caseadeira">Jack JK-T781G (Caseadeira)</option>
-            <option value="jack-jk-t1377e-botoneira">Jack JK-T1377E (Botoneira)</option>
-            <option value="zig-zag-industrial">Zig Zag Industrial</option>
-            <option value="maquina-infantil-casa-encantada">Máquina Infantil "Casa Encantada"</option>
-            <option value="domestica-reta-pratika-jx2051">Doméstica Reta Prátika JX-2051</option>
-            <option value="reta-industrial-direct-drive">Reta Industrial Direct Drive</option>
-            <option value="portatil-12-pontos-bivolt">Portátil 12 Pontos Bivolt</option>
-            <option value="mini-maquina-lanmax-lmd505a">Mini Máquina Lanmax LMD-505A</option>
-            <option value="mini-costura-mao-portatil">Mini Costura de Mão Portátil</option>
-            <option value="singer-tradition-2250">Singer Tradition 2250</option>
+            <option value="">Selecione...</option>
+            <option value="reta-industrial">Reta Industrial</option>
+            <option value="overlock">Overlock</option>
+            <option value="zigzag">Zig Zag</option>
+            <option value="bordado">Bordado Computadorizado</option>
           </select>
         </div>
 
         <div>
           <label for="observacoes">Observações:</label>
-          <textarea id="observacoes" name="observacoes" rows="4" placeholder="Ex: Deixar na portaria, entregar em horário comercial, etc."></textarea>
+          <textarea id="observacoes" name="observacoes" rows="4"></textarea>
         </div>
 
-      <button type="submit">Enviar Pedido</button>
-    </form>
+        <button type="submit">Enviar Pedido</button>
+      </form>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 MMC - Máquinas de Costura - Todos os direitos reservados</p>
-    <p><a href="mailto:contato@mmcmaquinas.com">Fale Conosco</a></p>
   </footer>
-  <script src="../assets/js/main.js" defer></script>
-
-    <script src="auth.js" defer></script>
 </body>
 </html>
