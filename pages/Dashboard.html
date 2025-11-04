@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMC - Área do Cliente | Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/styleglobal.css">
+</head>
+<!-- inclua antes do </body> em Dashboard.html e páginas -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="auth.js"></script>
+
+<body>
+
+    <header>
+        <div class="logo">MMC - Máquinas de Costura</div>
+        <nav>
+            <ul>
+                <li><a href="../Home.html">Home</a></li>
+                <li><a href="../pages/Sobre Nós.html">Sobre Nós</a></li>
+                <li><a href="../pages/Compra.html">Produtos</a></li>
+                <li><a href="../pages/Estatisticas da empresa.html">Estatísticas</a></li>
+                <li><a href="../pages/Formulário.html">Contato</a></li>
+                <li><a href="../pages/Cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+        <a href="../pages/Login.html" class="btn btn-login">Entrar / Login</a> 
+    </header>
+
+    <div id="dashboard-area" class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <h2>Bem-vindo(a), <span id="user-name-display"></span></h2>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li><a href="#perfil" class="active" data-section="perfil">Meu Perfil</a></li>
+                    <li><a href="#pedidos" data-section="pedidos">Meus Pedidos</a></li>
+                    <li><a href="#" id="logout-btn">Sair</a></li> 
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            
+            <section id="perfil" class="dashboard-section active">
+                <h3>Dados Pessoais e Contato</h3>
+                <div class="dashboard-card-group">
+                    
+                    <article class="info-card">
+                        <h4>Informações Básicas</h4>
+                        <p><strong>Nome:</strong> <span id="profile-name"></span></p>
+                        <p><strong>E-mail:</strong> <span id="profile-email"></span></p>
+                        <p><strong>CPF:</strong> <span id="profile-cpf"></span></p>
+                    </article>
+
+                    <article class="info-card">
+                        <h4>Endereço de Entrega Principal</h4>
+                        <p id="profile-address"></p>
+                        <button class="btn" style="padding: 0.5rem 1rem; margin-top: 1rem;">Gerenciar Endereços</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="pedidos" class="dashboard-section">
+                <h3>Histórico de Pedidos</h3>
+                <article class="info-card">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>ID do Pedido</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-list">
+                            </tbody>
+                    </table>
+                </article>
+
+                <div id="order-detail-display" style="display: none;">
+                    </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MMC - Máquinas de Costura - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="auth.js"></script>
+</body>
+</html>

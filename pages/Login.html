@@ -3,33 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - MMC Máquinas de Costura</title>
+    <link rel="stylesheet" href="../assets/css/styleglobal.css">
 </head>
-<body>
+<body class="page-login">
 
-    <main>
+<header>
+    <div class="logo">MMC - Máquinas de Costura</div>
+    <nav>
+     <ul>
+        <li><a href="../Home.html">Home</a></li>
+        <li><a href="../pages/Sobre Nós.html">Sobre Nós</a></li>
+        <li><a href="../pages/Compra.html">Produtos</a></li>
+        <li><a href="../pages/Estatisticas da empresa.html">Estatísticas</a></li>
+        <li><a href="../pages/Formulário.html">Contato</a></li>
+        <li><a href="../pages/Cadastro.html">Cadastro</a></li>
+      </ul>
+     <a href="../pages/Login.html" class="btn btn-login">Entrar / Login</a>
+    </nav>
+  </header>
+
+    <main class="main-compact">
         <h1>Acessar Conta</h1>
+        <p>Bem-vindo de volta! Faça login para continuar.</p>
         
-        <form action="teste.html" method="post">
-            <fieldset>
-                <legend>Informações de Login</legend>
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
+        <p id="auth-message" style="color: #ff0000; text-align: center; margin-bottom: 1rem;"></p>
+
+        <form id="login-form" action="#" method="post">
+            <div>
+                <label for="login-email">E-mail:</label>
+                <input type="email" id="login-email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+            <div>
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8">
+            </div>
+            
+            <div class="form-actions">
+                <div class="checkbox">
+                    <input type="checkbox" id="lembrar" name="lembrar">
+                    <label for="lembrar">Lembrar de mim</label>
                 </div>
-                <div>
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
-                </div>
-                <div>
-                    <a href="redefinasenhaindex.html">Esqueceu a senha?</a>
-                </div>
-            </fieldset>
+                <a class="forgot-password" href="Redefinir.html">Esqueceu a senha?</a>
+            </div>
 
             <button type="submit">Entrar</button>
-            <p>Ainda não tem conta? <a href="teste.html">Cadastre-se</a></p>
+
+            <p class="signup-link">Ainda não tem conta? <a href="Cadastro.html">Cadastre-se</a></p>
         </form>
     </main>
 
+    <footer>
+        </footer>
+
+    <script src="auth.js"></script>
 </body>
 </html>

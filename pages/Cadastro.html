@@ -1,69 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | MMC - Máquinas de Costura</title>
+  <link rel="stylesheet" href="../assets/css/styleglobal.css">
 </head>
 <body>
+   <header>
+    <div class="logo">MMC - Máquinas de Costura</div>
+    <nav>
+     <ul>
+        <li><a href="../Home.html">Home</a></li>
+        <li><a href="../pages/Sobre Nós.html">Sobre Nós</a></li>
+        <li><a href="../pages/Compra.html">Produtos</a></li>
+        <li><a href="../pages/Estatisticas da empresa.html">Estatísticas</a></li>
+        <li><a href="../pages/Formulário.html">Contato</a></li>
+        <li><a href="../pages/Cadastro.html">Cadastro</a></li>
+      </ul>
+     <a href="../pages/Login.html" class="btn btn-login">Entrar / Login</a>
+    </nav>
+  </header>
+  <main class="main-compact">
+    <h1>Cadastre-se</h1>
+    <p>Crie sua conta para aproveitar ofertas, acompanhar pedidos e muito mais.</p>
+    
+    <p id="auth-message-reg" style="color: #ff0000; text-align: center; margin-bottom: 1rem;"></p>
 
-    <main>
-        <h1>Página de Cadastro</h1>
-        
-        <form action="1index.html" method="post">
-            <fieldset>
-                <legend>Dados Pessoais</legend>
-                <div>
-                    <label for="nome">Nome completo:</label>
-                    <input type="text" id="nome" name="nome">
-               
-                    <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf">
-               
-                    <label for="data-nascimento">Data de nascimento:</label>
-                    <input type="date" id="data-nascimento" name="data-nascimento">
-               
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone">
-               </div>
-            </fieldset>
+    <form id="register-form" action="#" method="POST">
+      <div>
+          <label for="reg-name">Nome completo</label>
+          <input type="text" id="reg-name" name="nome" required>
+      </div>
+      <div>
+          <label for="reg-email">E-mail</label>
+          <input type="email" id="reg-email" name="email" required>
+      </div>
+      <div>
+          <label for="reg-password">Senha</label>
+          <input type="password" id="reg-password" name="senha" required minlength="8">
+      </div>
+      <div>
+          <label for="reg-confirm-senha">Confirmar senha</label>
+          <input type="password" id="reg-confirm-senha" name="confirm_senha" required minlength="8">
+      </div>
+      <div>
+          <label for="reg-cpf">CPF ou CNPJ</label>
+          <input type="text" id="reg-cpf" name="cpf" required pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2}|\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})" title="Formato: 000.000.000-00 ou 00.000.000/0000-00">
+      </div>
+      <div>
+          <label for="reg-telefone">Telefone</label>
+          <input type="tel" id="reg-telefone" name="telefone">
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="termos" name="termos" required>
+        <label for="termos">Li e aceito os <a href="#">termos de uso</a> e <a href="#">política de privacidade</a>.</label>
+      </div>
 
-            <fieldset>
-                <legend>Gênero</legend>
-                <p>Selecione seu Gênero:</p>
-                <div>
-                    <input type="radio" id="masculino" name="genero" value="masculino" checked>
-                    <label for="masculino">Masculino</label>
-                
-                    <input type="radio" id="feminino" name="genero" value="feminino" checked>
-                    <label for="feminino">Feminino</label>
+      <button type="submit">Cadastrar</button>
+      <p class="signup-link" style="text-align: center; margin-top: 1rem;">
+          Já tem conta? <a href="Login.html">Faça Login</a>
+      </p>
+    </form>
+  </main>
 
-                    <input type="radio" id="binario" name="genero" value="naoinfo" checked>
-                    <label for="naoinfo"> Prefiro não informar </label>
-                
-                    <input type="radio" id="nao-binario" name="genero" value="nao-binario" checked>
-                    <label for="nao-binario">Não Binário</label>
-                    
-            </fieldset>
-            
-            <fieldset>
-                <legend>Informações de Acesso</legend>
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="exemplo@gmail.com">
-                
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha">
-                
-                    <label for="confirmar-senha">Confirme Sua Senha:</label>
-                    <input type="password" id="confirmar-senha" name="confirmar-senha">
-                </div>
-            </fieldset>
-
-            <button type="submit">enviar <a href=1index.htmlr></a></button>
-            
-        </form>
-    </main>
-
+  <footer>
+    </footer>
+  <script src="auth.js"></script>
 </body>
 </html>

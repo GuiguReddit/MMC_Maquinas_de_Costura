@@ -3,110 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Estatísticas da Empresa</title>
+  <title>Estatísticas da Empresa - MMC Máquinas de Costura</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../assets/css/styleglobal.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+    /* Aumenta a largura máxima do container principal nesta página específica */
+    .page-estatisticas .main-wide {
+      max-width: 1400px;
     }
 
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 1em;
-      text-align: center;
+    /* Define a grade de gráficos */
+    .charts-grid-container {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+    }
+    @media (min-width: 768px) {
+      .charts-grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+      }
+    }
+    @media (min-width: 1200px) {
+      .charts-grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas grandes */
+      }
     }
 
-    main {
-      padding: 2em;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section {
-      margin-bottom: 3em;
-    }
-
-    canvas {
+    /* Estilo do card individual para centralizar o conteúdo */
+    .chart-container {
+      width: 100%;
       background-color: white;
-      border: 1px solid #ccc;
-      padding: 1em;
-      max-width: 100%;
+      border-radius: 8px;
+      padding: 1.5em;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centraliza o gráfico */
     }
-
-    h2 {
-      color: #004080;
+    .chart-container .section-title {
+        width: 100%;
+        text-align: center; /* Centraliza o título */
+    }
+    canvas {
+      max-width: 100%;
     }
   </style>
 </head>
-<body>
+<body class="page-estatisticas">
+
   <header>
-    <h1>Estatísticas da Empresa</h1>
+    <div class="logo">MMC - Máquinas de Costura</div>
+    <nav>
+      <ul>
+        <li><a href="../Home.html">Home</a></li>
+        <li><a href="Sobre Nós.html">Sobre Nós</a></li>
+        <li><a href="Compra.html">Produtos</a></li>
+        <li><a href="Estatisticas da empresa.html">Estatísticas</a></li>
+        <li><a href="Formulário.html">Contato</a></li>
+        <li><a href="Cadastro.html">Cadastro</a></li>
+      </ul>
+      <a href="Login.html" class="btn btn-login">Entrar / Login</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <article>
-        <h2>Faturamento Mensal</h2>
-        <canvas id="graficoFaturamento" width="600" height="300"></canvas>
-      </article>
-    </section>
+  <main class="main-wide">
+    <div class="page-header">
+      <h1>Estatísticas da Empresa</h1>
+      <p>Análise de desempenho e vendas da MMC Máquinas de Costura.</p>
+    </div>
 
-    <section>
-      <article>
-        <h2>Distribuição de Clientes</h2>
-        <canvas id="graficoClientes" width="600" height="300"></canvas>
-      </article>
-    </section>
+    <section class="section">
+      <div class="charts-grid-container">
+        <div class="chart-container">
+          <h2 class="section-title">Faturamento Mensal</h2>
+          <canvas id="graficoFaturamento"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2 class="section-title">Distribuição de Clientes</h2>
+          <canvas id="graficoClientes"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2 class="section-title">Vendas por Produto (Top 4)</h2>
+          <canvas id="graficoProdutos"></canvas>
+        </div>
 
-    <section>
-      <article>
-        <h2>Vendas por Produto</h2>
-        <canvas id="graficoProdutos" width="600" height="300"></canvas>
-      </article>
+        <div class="chart-container">
+          <h2 class="section-title">Crescimento de Novos Clientes</h2>
+          <canvas id="graficoNovosClientes"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2 class="section-title">Nível de Satisfação (NPS)</h2>
+          <canvas id="graficoSatisfacao"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2 class="section-title">Origem do Tráfego do Site</h2>
+          <canvas id="graficoTrafego"></canvas>
+        </div>
+      </div>
     </section>
   </main>
 
   <script>
+    // Configuração Padrão para os gráficos
+    const defaultChartOptions = {
+        responsive: true
+    };
+
+    // Gráfico de Faturamento
     new Chart(document.getElementById('graficoFaturamento'), {
       type: 'line',
       data: {
         labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'],
         datasets: [{
           label: 'Faturamento (R$)',
-          data: [1200, 1000, 1000, 900, 1300, 1500, 780],
-          borderColor: 'blue',
-          fill: false
+          data: [120000, 190000, 300000, 250000, 400000, 380000, 450000],
+          borderColor: '#1B3A4B',
+          backgroundColor: 'rgba(27, 58, 75, 0.1)',
+          fill: true,
+          tension: 0.3
         }]
-      }
+      },
+      options: defaultChartOptions
     });
-
+    
+    // Gráfico de Clientes
     new Chart(document.getElementById('graficoClientes'), {
       type: 'pie',
       data: {
-        labels: ['SP', 'RJ', 'MG', 'Outros'],
+        labels: ['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Outros'],
         datasets: [{
           label: 'Clientes por Região',
           data: [40, 25, 20, 15],
-          backgroundColor: ['#3366cc', '#dc3912', '#ff9900', '#109618']
+          backgroundColor: ['#1B3A4B', '#C4976A', '#a87f50', '#3e6a82']
         }]
-      }
+      },
+      options: defaultChartOptions
     });
-
+    
+    // Gráfico de Produtos
     new Chart(document.getElementById('graficoProdutos'), {
       type: 'bar',
       data: {
-        labels: ['Produto A', 'Produto B', 'Produto C', 'Produto D'],
+        labels: ['Jack F4', 'Singer Start 1306', 'Brother PE810L', 'Singer UltraLock'],
         datasets: [{
           label: 'Unidades Vendidas',
-          data: [500, 300, 700, 400],
-          backgroundColor: '#004080'
+          data: [500, 300, 150, 250],
+          backgroundColor: '#C4976A'
         }]
-      }
+      },
+      options: { ...defaultChartOptions, scales: { y: { beginAtZero: true } } }
+    });
+
+    // Gráfico de Novos Clientes
+    new Chart(document.getElementById('graficoNovosClientes'), {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'],
+        datasets: [{
+          label: 'Novos Clientes',
+          data: [30, 45, 62, 55, 78, 72, 85],
+          backgroundColor: '#1B3A4B' 
+        }]
+      },
+      options: { ...defaultChartOptions, scales: { y: { beginAtZero: true } } }
+    });
+    
+    // Gráfico de Satisfação
+    new Chart(document.getElementById('graficoSatisfacao'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Promotores', 'Neutros', 'Detratores'],
+        datasets: [{
+          label: 'Avaliações de Clientes',
+          data: [75, 18, 7],
+          backgroundColor: ['#3e6a82', '#F5E6D3', '#C4976A']
+        }]
+      },
+      options: defaultChartOptions
+    });
+    
+    // Gráfico de Tráfego
+    new Chart(document.getElementById('graficoTrafego'), {
+      type: 'polarArea',
+      data: {
+        labels: ['Busca Orgânica', 'Mídia Paga', 'Redes Sociais', 'Direto', 'Referência'],
+        datasets: [{
+          label: 'Visitantes (%)',
+          data: [45, 25, 15, 10, 5],
+          backgroundColor: ['#1B3A4B', '#C4976A', '#a87f50', '#3e6a82', '#F5E6D3']
+        }]
+      },
+      options: defaultChartOptions
     });
   </script>
+
+  <footer>
+    <p>&copy; 2025 MMC - Máquinas de Costura. Todos os direitos reservados.</p>
+  </footer>
+
 </body>
 </html>
