@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: A Máquina Certa - MMC Máquinas de Costura</title>
+    <link rel="stylesheet" href="../assets/css/styleglobal.css">
+</head>
+<body class="page-login"> 
+    <header>
+    <div class="logo">MMC - Máquinas de Costura</div>
+    
+    <nav id="nav"> <button id="btn-mobile" aria-expanded="false" aria-controls="menu" aria-haspopup="true">
+        Menu
+        <span id="hamburger-icon"></span> </button>
+      
+     <ul id="menu"> <li><a href="../Home.html">Home</a></li>
+        <li><a href="../pages/Sobre Nós.html">Sobre Nós</a></li>
+        <li><a href="../pages/Compra.html">Produtos</a></li>
+        <li><a href="../pages/Estatisticas da empresa.html">Estatísticas</a></li>
+        <li><a href="../pages/Formulário.html">Contato</a></li>
+        <li><a href="../pages/Cadastro.html">Cadastro</a></li>
+        <li><a href="../pages/Login.html" class="btn btn-login">Entrar / Login</a></li>
+      </ul>
+    </nav>
+  </header>
+    <main class="main-compact" style="max-width: 700px;"> <h1>A Máquina Certa para Você</h1>
+        <p>Responda 3 perguntas e descubra a máquina ideal para seus projetos.</p>
+        
+        <div id="quiz-container" class="quiz-container">
+            <div id="step1" class="quiz-step active">
+                <h3>1. Qual seu nível de experiência na costura?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-btn" data-value="iniciante">Estou começando agora, é meu primeiro contato.</button>
+                    <button class="quiz-btn" data-value="hobby">Já costuro por hobby, faço pequenos reparos e artesanato.</button>
+                    <button class="quiz-btn" data-value="pro">Sou profissional, busco produtividade para uma confecção.</button>
+                </div>
+            </div>
+
+            <div id="step2" class="quiz-step">
+                <h3>2. Que tipo de material você mais pretende usar?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-btn" data-value="leves">Tecidos leves e médios (algodão, malha, viscose).</button>
+                    <button class="quiz-btn" data-value="pesados">Tecidos pesados e desafiadores (jeans, couro, lona).</button>
+                    <button class="quiz-btn" data-value="bordado">Quero focar em bordados e personalização de peças.</button>
+                </div>
+            </div>
+
+            <div id="step3" class="quiz-step">
+                <h3>3. Qual seu objetivo principal?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-btn" data-value="basico">Reparos básicos, bainhas e projetos simples.</button>
+                    <button class="quiz-btn" data-value="versatil">Um pouco de tudo: acabamentos, roupas e artesanato.</button>
+                    <button class="quiz-btn" data-value="especializado">Produção em alta velocidade e acabamentos perfeitos.</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-result" class="quiz-result">
+            </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MMC Máquinas de Costura. Todos os direitos reservados.</p>
+    </footer>
+
+<script>
+    // --- Lógica do Quiz ---
+    const steps = document.querySelectorAll('.quiz-step');
+    const quizContainer = document.getElementById('quiz-container');
+    const resultContainer = document.getElementById('quiz-result');
+    const mainTitle = document.querySelector('main h1');
+    const mainP = document.querySelector('main p');
+    
+    let currentStep = 1;
+    const answers = {};
+
+    // Base de dados de produtos
+    const products = {
+        "singer_start_1306": {
+            name: "Singer Start 1306",
+            desc: "Perfeita para iniciantes, compacta e fácil de usar para reparos e artesanato.",
+            img: "../assets/imagens/maquina17.jpg",
+            link: "Compra.html#produto-5" // Ajuste o ID se necessário
+        },
+        "jack_f4": {
+            name: "Jack F4",
+            desc: "A reta industrial silenciosa e econômica, ideal para longas jornadas de produção.",
+            img: "../assets/imagens/maquina13.jpg",
+            link: "Compra.html#produto-1"
+        },
+        "singer_ultralock": {
+            name: "Singer UltraLock 14SH754",
+            desc: "Acabamentos profissionais em malhas e tecidos delicados com total versatilidade.",
+            img: "../assets/imagens/maquina14.jpg",
+            link: "Compra.html#produto-2"
+        },
+        "brother_pe810l": {
+            name: "Brother PE810L",
+            desc: "Líder em bordado doméstico, com visor colorido e entrada USB.",
+            img: "../assets/imagens/maquina15.jpg",
+            link: "Compra.html#produto-3"
+        },
+        "jack_h2": {
+            name: "Jack H2 (Transporte Duplo)",
+            desc: "Projetada para costurar materiais pesados como couro, lona e estofados.",
+            img: "../assets/imagens/maquina18.jpg",
+            link: "Compra.html#produto-6"
+        }
+    };
+
+    quizContainer.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('quiz-btn')) return;
+
+        answers[`step${currentStep}`] = e.target.dataset.value;
+        
+        const currentStepEl = document.getElementById(`step${currentStep}`);
+        currentStep++;
+        const nextStepEl = document.getElementById(`step${currentStep}`);
+
+        if (nextStepEl) {
+            currentStepEl.classList.remove('active');
+            nextStepEl.classList.add('active');
+        } else {
+            // Fim do quiz, mostrar resultados
+            showResults();
+        }
+    });
+
+    function showResults() {
+        quizContainer.style.display = 'none';
+        mainTitle.textContent = 'Sua Máquina Ideal está aqui!';
+        mainP.textContent = 'Com base nas suas respostas, estas são nossas recomendações para você:';
+
+        const { step1, step2, step3 } = answers;
+        let recommendations = [];
+
+        // Lógica de recomendação (simplificada)
+        if (step2 === 'bordado') {
+            recommendations.push(products.brother_pe810l);
+        } else if (step1 === 'pro' || step2 === 'pesados') {
+            recommendations.push(products.jack_h2);
+            recommendations.push(products.jack_f4);
+        } else if (step1 === 'iniciante' && step3 === 'basico') {
+            recommendations.push(products.singer_start_1306);
+        } else if (step3 === 'versatil' || step3 === 'especializado') {
+            recommendations.push(products.singer_ultralock);
+            recommendations.push(products.singer_start_1306);
+        } else {
+            // Fallback
+            recommendations.push(products.jack_f4);
+            recommendations.push(products.singer_start_1306);
+        }
+
+        // Garante que só tenhamos recomendações únicas
+        const uniqueRecommendations = [...new Set(recommendations)];
+
+        // Monta o HTML do resultado
+        let resultHTML = '';
+        uniqueRecommendations.forEach(product => {
+            resultHTML += `
+                <div class="recommendation-card">
+                    <img src="${product.img}" alt="${product.name}">
+                    <div class="recommendation-info">
+                        <h4>${product.name}</h4>
+                        <p>${product.desc}</p>
+                        <a href="${product.link}" class="btn">Ver Produto</a>
+                    </div>
+                </div>
+            `;
+        });
+        
+        resultHTML += '<button class="btn" onclick="window.location.reload()" style="background-color: #333; margin-top: 1rem;">Refazer o Quiz</button>';
+        
+        resultContainer.innerHTML = resultHTML;
+        resultContainer.style.display = 'block';
+    }
+</script>
+<script src="../assets/js/main.js" defer></script>
+
+    <script src="auth.js" defer></script>
+</body>
+</html>

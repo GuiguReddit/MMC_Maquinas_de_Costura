@@ -1,0 +1,1298 @@
+/* ====== MMC - CSS Global (Tema Elegante) ======
+   Paleta:
+   Azul Petróleo: #1B3A4B
+   Dourado Suave: #C4976A
+   Bege Claro:    #F5E6D3
+   Cinza Escuro:  #333333
+=================================================== */
+
+/* Reset e padrões */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F5E6D3;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #1B3A4B;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+header nav a {
+  color: #C4976A;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #fff;
+}
+
+/* Conteúdo principal (Usado em formulários/páginas internas) */
+main {
+  background-color: #fff;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+main h1 {
+  text-align: center;
+  color: #1B3A4B;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+main p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Formulários */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  color: #1B3A4B;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #C4976A;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 151, 106, 0.25);
+}
+
+/* Botões (Genérico e para Formulário) */
+button[type="submit"],
+.btn { /* Adicionado a classe .btn para ser global */
+  background-color: #C4976A;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none; /* Garante que funcione como link também */
+  display: inline-block; /* Garante padding correto */
+}
+
+button[type="submit"]:hover,
+.btn:hover {
+  background-color: #a87f50;
+}
+
+/* Links */
+a {
+  color: #C4976A;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #1B3A4B;
+  text-decoration: underline;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.checkbox input {
+  accent-color: #C4976A;
+}
+
+/* Rodapé */
+footer {
+  background-color: #1B3A4B;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+footer a {
+  color: #C4976A;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* ======================================= */
+/* Estilos da Home Page (MMC - Máquinas de Costura) */
+/* ======================================= */
+
+/* Navegação da Home (ajuste para a estrutura da Home) */
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Seção Hero */
+.hero {
+  /* A imagem de fundo e o overlay devem ser mantidos no HTML com <style> ou ajustados aqui */
+  /* Para manter a flexibilidade da imagem: */
+  /* background: url("maquina-costura.jpg") center/cover no-repeat; */
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+}
+
+/* Overlay do Hero (deve ser replicado para a imagem de fundo funcionar) */
+/* .hero::before { 
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: rgba(27,58,75,0.7);
+} */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color:#1B3A4B;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color:#1B3A4B;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Ajuste do botão Hero para o tamanho */
+.hero .btn {
+  padding: 0.8rem 1.5rem;
+}
+
+/* Seções de Conteúdo */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section h2 {
+  color: #1B3A4B;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+.benefit {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  flex: 1 1 200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  main {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .hero {
+    padding: 4rem 1rem;
+  }
+  
+  .section {
+    padding: 2rem 1rem;
+  }
+  
+  header nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Estilos de Seção Genérica */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section h2 {
+  color: #1B3A4B;
+  margin-bottom: 2rem;
+}
+
+/* Layout de Cards/Produtos (Usado na Home e em Compra) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Layout de Benefícios/Itens (Pequenos Cartões) */
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+.benefit {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  flex: 1 1 200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ========================================== */
+/* ====== Estilos da Página de Compras ====== */
+/* ========================================== */
+
+/* Layout principal para a página de compras. O seletor .page-compras garante que isso
+   não afete outras páginas que usam a classe .main-wide. */
+.page-compras .main-wide {
+  max-width: 1400px; /* Aumentado para comportar mais colunas */
+  width: 90%;
+}
+
+/* Cabeçalho da Página */
+.page-compras .page-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  border-bottom: 2px solid #F5E6D3;
+  padding-bottom: 1.5rem;
+}
+
+.page-compras .page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1B3A4B;
+}
+
+.page-compras .page-header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid de Produtos - */
+.page-compras .products-grid {
+  display: grid;
+  gap: 2rem;
+  /* Começa com 1 coluna em telas pequenas */
+  grid-template-columns: 1fr;
+}
+
+/* Card de Produto Individual */
+.page-compras .product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-compras .product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(27, 58, 75, 0.15);
+}
+
+/* Imagem do Produto */
+.page-compras .product-image {
+  width: 100%;
+  height: 220px;
+}
+
+.page-compras .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Informações do Produto */
+.page-compras .product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.page-compras .product-info h3 {
+  font-size: 1.3rem;
+  color: #1B3A4B;
+  margin-bottom: 0.5rem;
+}
+
+.page-compras .product-info p {
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+  flex-grow: 1;
+}
+
+.page-compras .product-price {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #C4976A;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.page-compras .product-info .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilo isolado para a seção de Contato */
+.page-compras .contact-section-wrapper {
+  background-color: #1B3A4B;
+  color: #fff;
+  padding: 4rem 2rem;
+  margin-top: 5rem;
+}
+
+.page-compras .contact-section-wrapper h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.page-compras .contact-section-wrapper p {
+  color: #F5E6D3;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-compras .contact-section-wrapper form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.page-compras .contact-section-wrapper label {
+  color: #F5E6D3;
+}
+
+/* ======================================= */
+/* ====== RESPONSIVIDADE DO GRID ====== */
+/* ======================================= */
+
+/* 2 colunas para tablets */
+@media (min-width: 600px) {
+  .page-compras .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 4 colunas para desktops */
+@media (min-width: 1024px) {
+  .page-compras .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ================================================================= */
+/* ==== ESTILOS COMPARTILHADOS (Compra, Galeria, etc.) ============= */
+/* ================================================================= */
+
+/* Aplica o layout principal e o cabeçalho para ambas as páginas */
+.page-compras .main-wide,
+.page-galeria .main-wide {
+  max-width: 1400px;
+  width: 90%;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  border-radius: 10px;
+  background-color: transparent; /* Remove o fundo branco do main */
+  box-shadow: none; /* Remove a sombra do main */
+}
+
+.page-compras .page-header,
+.page-galeria .page-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  border-bottom: 2px solid #F5E6D3;
+  padding-bottom: 1.5rem;
+}
+
+.page-compras .page-header h1,
+.page-galeria .page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1B3A4B;
+}
+
+.page-compras .page-header p,
+.page-galeria .page-header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Título de seção padronizado */
+.page-galeria .section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #1B3A4B;
+    margin-top: 4rem; /* Adiciona espaço entre as seções da galeria */
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+
+
+/* ================================================================= */
+/* ====== ESTILOS ESPECÍFICOS DA PÁGINA DE GALERIA ================= */
+/* ================================================================= */
+
+.page-galeria .gallery-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+}
+
+/* Card da Galeria */
+.page-galeria .gallery-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0; /* Reseta a margem padrão do <figure> */
+}
+
+.page-galeria .gallery-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(27, 58, 75, 0.15);
+}
+
+.page-galeria .gallery-card a {
+  display: block; /* Garante que o link ocupe a área da imagem */
+  height: 220px;
+}
+
+.page-galeria .gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.page-galeria .gallery-card:hover img {
+    opacity: 0.9;
+}
+
+.page-galeria .gallery-card figcaption {
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  background-color: #fff;
+  border-top: 1px solid #f0f0f0;
+  flex-grow: 1; /* Garante que a altura do card seja consistente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======================================= */
+/* ====== RESPONSIVIDADE DA GALERIA ====== */
+/* ======================================= */
+
+/* 2 colunas para tablets */
+@media (min-width: 600px) {
+  .page-galeria .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 4 colunas para desktops */
+@media (min-width: 1024px) {
+  .page-galeria .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ====================================================== */
+/* ====== ESTILOS DA PÁGINA SOBRE NÓS =================== */
+/* ====================================================== */
+
+/* Garante que o fundo do corpo da página Sobre Nós seja o bege padrão */
+.page-sobre {
+  background-color: #F5E6D3;
+}
+
+.page-sobre .main-wide {
+  max-width: 1200px; 
+  background-color: #fff;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.page-sobre .about-container {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 3rem; 
+  align-items: stretch; /* Faz os itens (imagem e texto) terem a mesma altura */
+  margin-top: 2rem;
+}
+
+.page-sobre .about-image {
+  flex: 1 1 300px; 
+  min-width: 280px; 
+  margin: 0; 
+  display: flex; /* Necessário para a imagem interna se ajustar */
+}
+
+.page-sobre .about-image img {
+  width: 100%;
+  height: 100%; /* Faz a imagem ocupar toda a altura disponível */
+  border-radius: 10px;
+  object-fit: cover; /* Garante que a imagem não se distorça */
+}
+
+.page-sobre .about-text {
+  flex: 2 1 500px; 
+}
+
+.page-sobre .about-text h2 {
+  font-size: 1.8rem;
+  color: #1B3A4B;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #C4976A;
+}
+
+.page-sobre .about-text section:not(:first-child) h2 {
+    margin-top: 2.5rem; 
+}
+
+.page-sobre .about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8; 
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* === ESTILO DOS PARÁGRAFOS ABAIXO === */
+
+.page-sobre .about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8; 
+  color: #333;
+  margin-bottom: 1.5rem; /* espaço vertical entre parágrafos */
+  text-align: left; /* alinhamento simples à esquerda */
+}
+
+/* =============================================================== */
+/* ====== ESTILOS ESPECÍFICOS DA PÁGINA DE LOGIN ================= */
+/* =============================================================== */
+
+.page-login main {
+    /* O estilo principal já cria o card branco, então aqui só ajustamos */
+    max-width: 450px;
+}
+
+.page-login main h1 {
+  font-size: 2rem;
+}
+
+.page-login form {
+  margin-top: 1rem;
+}
+
+.page-login button[type="submit"] {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.page-login .form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.page-login .forgot-password {
+  font-weight: 600;
+}
+
+.page-login .signup-link {
+  text-align: center;
+  margin-top: 2rem;
+  color: #555;
+}
+
+/* ================================================================= */
+/* ====== AJUSTES NO HEADER PARA O BOTÃO DE LOGIN ================== */
+/* ================================================================= */
+
+/* Transforma a <nav> em um container flex para alinhar o menu e o botão */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /* Espaço entre o menu e o botão de login */
+}
+
+/* Estilo para o botão de login no header */
+.btn-login {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid #C4976A; /* Dourado Suave */
+    color: #C4976A; /* Dourado Suave */
+    white-space: nowrap; /* Evita que o texto quebre em duas linhas */
+}
+
+.btn-login:hover {
+    background-color: #C4976A;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ============================================================= */
+/* ====== ESPAÇAMENTO EXTRA PARA TÍTULOS DE SEÇÃO ============== */
+/* =============================================================*/
+
+/* Adiciona uma margem superior maior aos títulos na página de compras */
+.page-compras .section-title {
+  margin-top: 5rem; /* Aumenta o espaço acima dos títulos */
+}
+
+/* ============================================================ */
+/* ====== ESTILOS MODERNOS PARA O CAMPO DE OBSERVAÇÕES ======== */
+/* ============================================================ */
+
+/* Aplica os mesmos estilos dos inputs à textarea para consistência */
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Garante a mesma fonte */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  
+  resize: vertical; /* Permite que o usuário aumente a altura, mas não a largura */
+  min-height: 120px; /* Define uma altura mínima confortável */
+  line-height: 1.6; /* Melhora a legibilidade do texto digitado */
+}
+
+/* Aplica o mesmo efeito de foco dos outros campos */
+textarea:focus {
+  border-color: #C4976A;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 151, 106, 0.25);
+}
+
+/* ======================================================== */
+/* ====== NOVAS SEÇÕES PARA A HOMEPAGE ==================== */
+/* ======================================================== */
+
+/* --- Seção de Depoimentos --- */
+.section-testimonials {
+  background-color: #fff; /* Fundo branco para destacar */
+}
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  background: #F5E6D3; /* Fundo bege claro */
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 5px solid #C4976A; /* Detalhe dourado */
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-card blockquote {
+  border: none;
+  font-style: italic;
+  color: #333;
+  flex-grow: 1;
+  margin: 0 0 1.5rem 0;
+}
+.testimonial-card cite {
+  font-style: normal;
+}
+.testimonial-card cite p {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+
+/* --- Seção de Marcas --- */
+.brands-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+}
+.brands-container img {
+  max-height: 50px; /* Altura máxima para os logos */
+  max-width: 150px; /* Largura máxima */
+  filter: grayscale(100%); /* Deixa em preto e branco */
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+.brands-container img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* --- Seção Sobre Nós Resumido --- */
+.section-about-summary {
+  background-color: #F5E6D3; /* Cor de fundo principal */
+}
+.about-summary-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-summary-text {
+  flex: 1;
+}
+.about-summary-text h2 {
+  text-align: left;
+}
+.about-summary-text p {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+.about-summary-image {
+  flex: 1;
+}
+.about-summary-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+/* Responsividade do Sobre Nós Resumido */
+@media (max-width: 768px) {
+  .about-summary-content {
+    flex-direction: column;
+  }
+}
+
+/* --- Seção de Newsletter --- */
+.newsletter-section {
+  background-color: #1B3A4B; /* Azul Petróleo */
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.newsletter-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.newsletter-content p {
+  color: #F5E6D3;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.newsletter-form input {
+  flex-grow: 1;
+  border: 1px solid #C4976A;
+}
+/* Responsividade do Newsletter */
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+/* ======================================================== */
+/* ====== ADIÇÕES CRIATIVAS (Quiz, Interações) ====== */
+/* ======================================================== */
+
+/* --- Estilos da Ideia 4 (Micro-interação na Home) --- */
+/* Adiciona feedback visual ao passar o mouse nos benefícios */
+.benefits .benefit {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent; /* Prepara para o hover */
+}
+
+.benefits .benefit:hover {
+  transform: translateY(-5px); /* Efeito de levantar */
+  border-bottom-color: #C4976A; /* Destaque dourado */
+  
+  /* --- ATUALIZAÇÃO: Efeito de Brilho --- */
+  /* Sombra 1: Sombra padrão para profundidade */
+  box-shadow: 0 6px 15px rgba(27, 58, 75, 0.15),
+  /* Sombra 2: O "brilho" dourado sutil que você pediu */
+              0 0 12px rgba(196, 151, 106, 0.6);
+}
+
+
+/* --- Estilos da Ideia 1 (Quiz Interativo) --- */
+.quiz-container {
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.quiz-step {
+  display: none; /* Escondido por padrão */
+  animation: fadeIn 0.5s;
+}
+
+.quiz-step.active {
+  display: block;
+}
+
+.quiz-container h3 {
+  color: #1B3A4B;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Botões de opção do Quiz */
+.quiz-btn {
+  background-color: #fdfdfd;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.quiz-btn:hover {
+  border-color: #C4976A;
+  background-color: #fff;
+  color: #1B3A4B;
+  box-shadow: 0 4px 10px rgba(196, 151, 106, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Resultado do Quiz */
+.quiz-result {
+  display: none; /* Escondido por padrão */
+  animation: fadeIn 0.5s;
+  text-align: center;
+}
+
+/* Card de Recomendação (Resultado) */
+.recommendation-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: #F5E6D3;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.recommendation-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.recommendation-info h4 {
+  color: #1B3A4B;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.recommendation-info p {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+@media (min-width: 600px) {
+  .recommendation-card {
+    flex-direction: row;
+    text-align: left;
+  }
+  .recommendation-info p {
+    text-align: left;
+  }
+  .recommendation-info .btn {
+    display: inline-block;
+    width: auto; /* Botão não ocupa 100% */
+  }
+}
+
+
+/* Animação simples de fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =================================================== */
+/* ====== V0.4 - RESPONSIVIDADE (MENU MOBILE) ======== */
+/* =================================================== */
+
+/* Botão Mobile (Hamburger) */
+#btn-mobile {
+  display: none; /* Escondido no Desktop */
+  background: transparent;
+  border: none;
+  color: #C4976A; /* Dourado Suave */
+  font-weight: 600;
+  padding: 0.5rem;
+  cursor: pointer;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#hamburger-icon {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+#hamburger-icon::before,
+#hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+#hamburger-icon::before {
+  top: -6px;
+}
+
+#hamburger-icon::after {
+  bottom: -6px;
+}
+
+
+/* Regras para telas menores (Tablets e Celulares) */
+@media (max-width: 768px) {
+  
+  /* Esconde o menu <ul> e o gap da <nav> */
+  header nav {
+    gap: 0;
+  }
+
+  header nav ul {
+    display: none; /* Esconde o menu de links */
+    position: absolute;
+    width: 100%;
+    top: 79px; /* Altura do header (padding 1.5rem * 2 + font-size 1.5rem) - ajuste fino */
+    right: 0px;
+    background: #1B3A4B; /* Fundo do header */
+    z-index: 1000;
+    
+    /* Layout vertical */
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  /* Mostra o botão Hamburger */
+  #btn-mobile {
+    display: flex;
+  }
+
+  /* --- Estilo do Menu Aberto (via JS .active) --- */
+
+  #nav.active #menu {
+    display: flex;
+  }
+  
+  /* Animação do ícone para 'X' */
+  #nav.active #hamburger-icon {
+    transform: rotate(45deg);
+  }
+  #nav.active #hamburger-icon::before {
+    transform: rotate(90deg);
+    top: 0;
+  }
+  #nav.active #hamburger-icon::after {
+    transform: rotate(90deg);
+    bottom: 0;
+  }
+
+  /* Links dentro do menu mobile */
+  header nav ul li {
+    width: 100%;
+  }
+
+  header nav ul li a {
+    display: block;
+    padding: 1.5rem 2rem;
+    margin-left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(196, 151, 106, 0.2); /* Linha dourada sutil */
+  }
+
+  /* Botão de Login dentro do menu mobile */
+  header nav ul li .btn-login {
+    text-align: center;
+    border-radius: 0; /* Ocupa toda a largura */
+    margin-top: 1rem;
+    background-color: #C4976A; /* Fundo sólido */
+    color: #fff; /* Texto branco */
+  }
+
+  header nav ul li .btn-login:hover {
+    background-color: #a87f50; /* */
+  }
+}
+
+/* ======================================= */
+/* v0.5 - ESTILOS DA PÁGINA DE QUIZ        */
+/* ======================================= */
+
+/* Oculta as etapas que não estão ativas */
+.quiz-step {
+    display: none;
+}
+.quiz-step.active {
+    display: block;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr; /* Um botão por linha */
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.quiz-btn {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    width: 100%;
+}
+
+.quiz-btn:hover {
+    background-color: #F5E6D3; /* Bege Claro */
+    border-color: #C4976A; /* Dourado */
+    transform: translateY(-2px);
+}
+
+/* Oculta o container de resultado por padrão */
+#quiz-result {
+    display: none;
+}
+
+/* Estilo do Card de Resultado */
+.recommendation-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 2px solid #C4976A;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #fdfaf5;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.recommendation-card img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    align-self: center;
+}
+
+.recommendation-info {
+    flex: 1;
+}
+
+.recommendation-info h4 {
+    color: #1B3A4B;
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-info p {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+/* Responsividade para o card de resultado */
+@media (min-width: 600px) {
+    .recommendation-card {
+        flex-direction: row;
+        align-items: center;
+    }
+    .recommendation-card img {
+        align-self: flex-start;
+    }
+}
