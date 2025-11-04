@@ -6,7 +6,6 @@
    Cinza Escuro:  #333333
 =================================================== */
 
-
 /* Reset e padrões */
 * {
   margin: 0;
@@ -948,314 +947,141 @@ textarea:focus {
   }
 }
 
-/* ======================================= */
-/* ESTILOS DE DASHBOARD E AUTENTICAÇÃO     */
-/* ======================================= */
+/* ======================================================== */
+/* ====== ADIÇÕES CRIATIVAS (Quiz, Interações) ====== */
+/* ======================================================== */
 
-/* Ajuste para formularios de Login/Cadastro no tema principal */
-main form > div { 
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
+/* --- Estilos da Ideia 4 (Micro-interação na Home) --- */
+/* Adiciona feedback visual ao passar o mouse nos benefícios */
+.benefits .benefit {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent; /* Prepara para o hover */
 }
 
-/* Layout do Dashboard */
-.dashboard-layout {
-  display: flex;
-  min-height: calc(100vh - 10rem); /* Ajusta a altura mínima */
-  max-width: 1200px;
-  margin: 2rem auto;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
+.benefits .benefit:hover {
+  transform: translateY(-5px); /* Efeito de levantar */
+  border-bottom-color: #C4976A; /* Destaque dourado */
+  
+  /* --- ATUALIZAÇÃO: Efeito de Brilho --- */
+  /* Sombra 1: Sombra padrão para profundidade */
+  box-shadow: 0 6px 15px rgba(27, 58, 75, 0.15),
+  /* Sombra 2: O "brilho" dourado sutil que você pediu */
+              0 0 12px rgba(196, 151, 106, 0.6);
 }
 
-/* Sidebar de Navegação */
-.sidebar {
-  width: 250px;
-  background-color: #1B3A4B; /* Azul Petróleo */
-  color: #fff;
-  padding: 2rem 0;
-  flex-shrink: 0; /* Impede que o sidebar encolha */
+
+/* --- Estilos da Ideia 1 (Quiz Interativo) --- */
+.quiz-container {
+  padding: 1rem 0;
+  text-align: left;
 }
 
-.sidebar h2 {
-  color: #C4976A; /* Dourado Suave */
-  text-align: center;
-  margin-bottom: 2rem;
-  padding: 0 1rem;
+.quiz-step {
+  display: none; /* Escondido por padrão */
+  animation: fadeIn 0.5s;
 }
 
-.sidebar-nav {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar-nav li a {
+.quiz-step.active {
   display: block;
-  padding: 1rem 2rem;
-  color: #F5E6D3; /* Bege Claro */
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.sidebar-nav li a:hover,
-.sidebar-nav li a.active {
-  background-color: rgba(196, 151, 106, 0.2); /* Dourado leve */
-  color: #fff;
-  border-left: 5px solid #C4976A;
-}
-
-/* Conteúdo Principal do Dashboard */
-.dashboard-content {
-  flex-grow: 1;
-  padding: 2rem;
-}
-
-.dashboard-section {
-  display: none; /* Esconde todas as seções por padrão */
-}
-
-.dashboard-section.active {
-  display: block; /* Mostra a seção ativa */
-}
-
-.dashboard-content h3 {
+.quiz-container h3 {
   color: #1B3A4B;
-  border-bottom: 2px solid #F5E6D3;
-  padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
 }
 
-/* Estilo para cards de informação */
-.info-card {
-  background-color: #f9f9f9;
-  border: 1px solid #eee;
-  padding: 1.5rem;
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Botões de opção do Quiz */
+.quiz-btn {
+  background-color: #fdfdfd;
+  border: 2px solid #eee;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 1.25rem;
   text-align: left;
-}
-
-.info-card p {
-  text-align: left;
-  margin-bottom: 0.5rem;
   font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
-.info-card strong {
-  color: #1B3A4B;
-}
-
-/* Tabela de Pedidos */
-.orders-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-.orders-table th, .orders-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.orders-table th {
-    background-color: #1B3A4B;
-    color: white;
-}
-
-/* Status do Pedido */
-.status-badge {
-    padding: 0.3rem 0.8rem;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    display: inline-block;
-}
-.status-badge.sent { background-color: #C4976A; color: #1B3A4B; }
-.status-badge.delivered { background-color: #4CAF50; color: white; }
-.status-badge.pending { background-color: #ffc107; color: #333; }
-
-/* Ajustes para a tela de login */
-.page-login main {
-  max-width: 400px;
-}
-.page-login .form-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.page-login .form-actions a {
-  font-size: 0.9rem;
-}
-
-/* ======================================= */
-/* ATUALIZAÇÕES PARA DASHBOARD E CARDS     */
-/* ======================================= */
-
-/* Ajuste para formularios de Login/Cadastro no tema principal */
-main form > div { 
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Dashboard Layout Base (Manter flex-grow: 1 para crescer com o conteúdo) */
-.dashboard-layout {
-  display: flex;
-  min-height: calc(100vh - 10rem); 
-  max-width: 1300px; /* Levemente maior */
-  margin: 2rem auto;
+.quiz-btn:hover {
+  border-color: #C4976A;
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 95%; /* Garante que ele seja responsivo em qualquer tela */
+  color: #1B3A4B;
+  box-shadow: 0 4px 10px rgba(196, 151, 106, 0.2);
+  transform: translateY(-2px);
 }
 
-/* Sidebar de Navegação */
-.sidebar {
-  width: 250px;
-  background-color: #1B3A4B; 
-  color: #fff;
-  padding: 2rem 0;
-  flex-shrink: 0; 
-}
-/* ... (Manter estilos do sidebar e sidebar-nav) ... */
-
-
-/* Conteúdo Principal do Dashboard */
-.dashboard-content {
-  flex-grow: 1;
-  padding: 2rem;
+/* Resultado do Quiz */
+.quiz-result {
+  display: none; /* Escondido por padrão */
+  animation: fadeIn 0.5s;
+  text-align: center;
 }
 
-/* Estilo para cards de informação (MAIORES E MAIS SEMÂNTICOS) */
-.dashboard-card-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.info-card {
-  background-color: #f9f9f9;
-  border: 1px solid #eee;
+/* Card de Recomendação (Resultado) */
+.recommendation-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: #F5E6D3;
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  text-align: left;
-  /* Torna os cards mais responsivos e maiores */
-  flex: 1 1 300px; /* Cresce e encolhe, com tamanho base de 300px */
+  text-align: center;
 }
-/* ... (Manter estilos de .orders-table e .status-badge) ... */
 
+.recommendation-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-/* ======================================= */
-/* RESPONSIVIDADE DO DASHBOARD             */
-/* ======================================= */
+.recommendation-info h4 {
+  color: #1B3A4B;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
 
-@media (max-width: 768px) {
-  .dashboard-layout {
-    flex-direction: column; /* Coloca sidebar acima do conteúdo */
-    margin: 1rem auto;
-  }
-  
-  .sidebar {
-    width: 100%; /* Sidebar ocupa toda a largura */
-    padding: 1rem 0;
-  }
-  
-  .sidebar h2 {
-    margin-bottom: 1rem;
-  }
+.recommendation-info p {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
 
-  .sidebar-nav {
-    display: flex;
-    justify-content: space-around; /* Distribui os links horizontalmente */
+@media (min-width: 600px) {
+  .recommendation-card {
+    flex-direction: row;
+    text-align: left;
   }
-
-  .sidebar-nav li a {
-    padding: 0.8rem 1rem;
-    border-left: none !important; 
-    border-bottom: 3px solid transparent;
+  .recommendation-info p {
+    text-align: left;
   }
-  
-  .sidebar-nav li a.active {
-    border-left: none !important;
-    border-bottom: 3px solid #C4976A;
-  }
-
-  .dashboard-content {
-    padding: 1rem;
+  .recommendation-info .btn {
+    display: inline-block;
+    width: auto; /* Botão não ocupa 100% */
   }
 }
 
-/* ======================================= */
-/* ESTILOS DE VISUALIZAÇÃO DE PEDIDO       */
-/* ======================================= */
 
-/* Classe para tornar a linha da tabela clicável */
-.orders-table tbody tr {
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.orders-table tbody tr:hover {
-    background-color: #f0f0f0;
-}
-
-/* Layout dos Detalhes do Pedido */
-.order-detail-view {
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    margin-top: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.order-detail-view h4 {
-    color: #C4976A; /* Dourado */
-    margin-bottom: 1rem;
-    border-bottom: 1px dotted #eee;
-    padding-bottom: 0.5rem;
-}
-
-.order-detail-view .item-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1rem;
-}
-
-.order-detail-view .item-list li {
-    background-color: #F5E6D3; /* Bege Claro */
-    padding: 0.5rem;
-    margin-bottom: 0.3rem;
-    border-radius: 4px;
-}
-
-.order-detail-view .ship-info {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
-}
-
-/* ======================================= */
-/* REGRAS DE VISIBILIDADE DO DASHBOARD     */
-/* ======================================= */
-
-/* Esconde todas as seções do dashboard por padrão */
-.dashboard-section {
-    display: none;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Mostra apenas a seção que está ATIVA */
-.dashboard-section.active {
-    display: block; 
+/* Animação simples de fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

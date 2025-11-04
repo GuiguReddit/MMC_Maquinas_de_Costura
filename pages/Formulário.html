@@ -20,124 +20,112 @@
       </ul>
       <a href="../pages/Login.html" class="btn btn-login">Entrar / Login</a>
     </nav>
-</header>
+  </header>
+  <main class="main-compact">
+    <h1>Formulário de Entrega</h1>
 
-<main class="main-compact">
-    <h1>Finalizar Pedido</h1>
-    
-    <p id="entrega-message" style="color: red; text-align: center; margin-bottom: 1rem;"></p>
-
-    <form id="entrega-form" action="#" method="post">
+    <form action="#" method="post">
       
-        <fieldset>
-            <legend>Dados do Cliente</legend>
-            <div>
-              <label for="nome">Nome Completo:</label>
-              <input type="text" id="nome" name="nome" required>
-            </div>
-    
-            <div>
-              <label for="email">E-mail:</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-    
-            <div>
-              <label for="telefone">Telefone:</label>
-              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
-            </div>
-        </fieldset>
-        
-        <fieldset>
-            <legend>Endereço de Entrega</legend>
-            <div>
-              <label for="endereco">Endereço (Rua, Número):</label>
-              <input type="text" id="endereco" name="endereco" required>
-            </div>
-    
-            <div>
-              <label for="cidade">Cidade:</label>
-              <input type="text" id="cidade" name="cidade" required>
-            </div>
-    
-            <div>
-              <label for="estado">Estado:</label>
-              <select id="estado" name="estado" required>
-                <option value="">Selecione seu estado...</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-              </select>
-            </div>
-    
-            <div>
-              <label for="cep">CEP:</label>
-              <input type="text" id="cep" name="cep" placeholder="00000-000" required>
-            </div>
-        </fieldset>
+        <div>
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
 
-        <fieldset>
-            <legend>Itens do Pedido</legend>
-            <div>
-              <label for="modelo">Modelo da Máquina (Item Principal):</label>
-              <select id="modelo" name="modelo" required>
-                <option value="">Selecione o Modelo Desejado...</option>
-                <option value="Jack F4">Jack F4</option>
-                <option value="Singer UltraLock 14SH754">Singer UltraLock 14SH754</option>
-                <option value="Brother PE810L">Brother PE810L</option>
-                <option value="Brother 2340CV">Brother 2340CV</option>
-                <option value="Singer Start 1306">Singer Start 1306</option>
-                <option value="Jack H2 (Transporte Duplo)">Jack H2 (Transporte Duplo)</option>
-                <option value="Jack JK-T781G (Caseadeira)">Jack JK-T781G (Caseadeira)</option>
-                <option value="Jack JK-T1377E (Botoneira)">Jack JK-T1377E (Botoneira)</option>
-                <option value="Zig Zag Industrial">Zig Zag Industrial</option>
-                <option value="Máquina Infantil 'Casa Encantada'">Máquina Infantil "Casa Encantada"</option>
-                <option value="Doméstica Reta Prátika JX-2051">Doméstica Reta Prátika JX-2051</option>
-                <option value="Reta Industrial Direct Drive">Reta Industrial Direct Drive</option>
-                <option value="Portátil 12 Pontos Bivolt">Portátil 12 Pontos Bivolt</option>
-                <option value="Mini Máquina Lanmax LMD-505A">Mini Máquina Lanmax LMD-505A</option>
-                <option value="Mini Costura de Mão Portátil">Mini Costura de Mão Portátil</option>
-                <option value="Singer Tradition 2250">Singer Tradition 2250</option>
-              </select>
-            </div>
-    
-            <div>
-              <label for="observacoes">Observações:</label>
-              <textarea id="observacoes" name="observacoes" rows="4" placeholder="Ex: Deixar na portaria, entregar em horário comercial, etc."></textarea>
-            </div>
-        </fieldset>
+        <div>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+        </div>
+      
+        
+        <div>
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" name="endereco" required>
+        </div>
+
+        <div>
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" required>
+        </div>
+
+        <div>
+          <label for="estado">Estado:</label>
+          <select id="estado" name="estado" required>
+            <option value="">Selecione seu estado...</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="cep">CEP:</label>
+          <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+        </div>
+      
+        <div>
+          <label for="modelo">Modelo da Máquina:</label>
+          <select id="modelo" name="modelo" required>
+            <option value="">Selecione o Modelo Desejado...</option>
+            <option value="jack-f4">Jack F4</option>
+            <option value="singer-ultralock-14sh754">Singer UltraLock 14SH754</option>
+            <option value="brother-pe810l">Brother PE810L</option>
+            <option value="brother-2340cv">Brother 2340CV</option>
+            <option value="singer-start-1306">Singer Start 1306</option>
+            <option value="jack-h2-transporte-duplo">Jack H2 (Transporte Duplo)</option>
+            <option value="jack-jk-t781g-caseadeira">Jack JK-T781G (Caseadeira)</option>
+            <option value="jack-jk-t1377e-botoneira">Jack JK-T1377E (Botoneira)</option>
+            <option value="zig-zag-industrial">Zig Zag Industrial</option>
+            <option value="maquina-infantil-casa-encantada">Máquina Infantil "Casa Encantada"</option>
+            <option value="domestica-reta-pratika-jx2051">Doméstica Reta Prátika JX-2051</option>
+            <option value="reta-industrial-direct-drive">Reta Industrial Direct Drive</option>
+            <option value="portatil-12-pontos-bivolt">Portátil 12 Pontos Bivolt</option>
+            <option value="mini-maquina-lanmax-lmd505a">Mini Máquina Lanmax LMD-505A</option>
+            <option value="mini-costura-mao-portatil">Mini Costura de Mão Portátil</option>
+            <option value="singer-tradition-2250">Singer Tradition 2250</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="observacoes">Observações:</label>
+          <textarea id="observacoes" name="observacoes" rows="4" placeholder="Ex: Deixar na portaria, entregar em horário comercial, etc."></textarea>
+        </div>
 
       <button type="submit">Enviar Pedido</button>
     </form>
-</main>
+  </main>
 
-<footer>
+  <footer>
     <p>&copy; 2025 MMC - Máquinas de Costura - Todos os direitos reservados</p>
     <p><a href="mailto:contato@mmcmaquinas.com">Fale Conosco</a></p>
-</footer>
-<script src="auth.js"></script>
+  </footer>
 </body>
 </html>

@@ -23,20 +23,18 @@
     </nav>
   </header>
 
-    <main class="main-compact">
+    <main>
         <h1>Acessar Conta</h1>
         <p>Bem-vindo de volta! Faça login para continuar.</p>
         
-        <p id="auth-message" style="color: #ff0000; text-align: center; margin-bottom: 1rem;"></p>
-
-        <form id="login-form" action="#" method="post">
+        <form action="#" method="post">
             <div>
-                <label for="login-email">E-mail:</label>
-                <input type="email" id="login-email" name="email" placeholder="seuemail@exemplo.com" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
             </div>
             <div>
-                <label for="login-password">Senha:</label>
-                <input type="password" id="login-password" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
             </div>
             
             <div class="form-actions">
@@ -54,8 +52,11 @@
     </main>
 
     <footer>
-        </footer>
+        <p>&copy; 2025 MMC – Maquinas de Costuras. Todos os direitos reservados.</p>
+        <address>
+          Contato: <a href="mailto:contato@lojammcmaquinas.com">contato@lojammcmaquinas.com</a>
+        </address>
+    </footer>
 
-    <script src="auth.js"></script>
 </body>
 </html>

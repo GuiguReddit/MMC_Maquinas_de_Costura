@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <audio id="sewing-sound" src="../SITE MMC - Maquinas de Costura/assets/audio/sewing-sound.mp3" preload="auto"></audio>
+
   <header>
     <div class="logo">MMC - Máquinas de Costura</div>
     <nav>
@@ -81,10 +83,10 @@
   <section class="section">
     <h2>Por que escolher a MMC?</h2>
     <div class="benefits">
-      <div class="benefit">🧵 Alta precisão em cada ponto</div>
-      <div class="benefit">⚡ Economia de energia</div>
-      <div class="benefit">🛠️ Suporte técnico especializado</div>
-      <div class="benefit">🎯 Garantia estendida</div>
+      <div class="benefit" id="benefit-item">🧵 Alta precisão em cada ponto</div>
+      <div class="benefit" id="benefit-item">⚡ Economia de energia</div>
+      <div class="benefit" id="benefit-item">🛠️ Suporte técnico especializado</div>
+      <div class="benefit" id="benefit-item">🎯 Garantia estendida</div>
     </div>
   </section>
 
@@ -160,5 +162,45 @@
     <p>&copy; 2025 MMC Máquinas de Costura. Todos os direitos reservados.</p>
     <p><a href="pages/Formulário.html">Fale Conosco</a></p>
   </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('sewing-sound');
+        const benefits = document.querySelectorAll('.benefit');
+        let stopAudioTimeout; // Variável para controlar o timeout
+
+        benefits.forEach(item => {
+            
+            // Evento 1: Mouse entra no elemento
+            item.addEventListener('mouseenter', () => {
+                if (audio) {
+                    // Limpa qualquer timeout anterior para evitar múltiplos sons
+                    clearTimeout(stopAudioTimeout); 
+                    
+                    audio.currentTime = 0; // Reinicia o áudio
+                    audio.volume = 0.10;   // ATUALIZADO: Volume bem sutil (10%)
+                    audio.play().catch(e => console.error("Erro ao tocar áudio:", e));
+
+                    // ATUALIZADO: Define um limite de 1 segundo
+                    // Para o áudio automaticamente após 1s
+                    stopAudioTimeout = setTimeout(() => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    }, 1000); // 1000ms = 1 segundo
+                }
+            });
+
+            // Evento 2: Mouse sai do elemento
+            item.addEventListener('mouseleave', () => {
+                if (audio) {
+                    // Para o áudio imediatamente
+                    clearTimeout(stopAudioTimeout); // Cancela o timeout de 1s
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
