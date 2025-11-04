@@ -51,18 +51,21 @@
 </head>
 <body class="page-estatisticas">
 
-  <header>
+<header>
     <div class="logo">MMC - Máquinas de Costura</div>
-    <nav>
-      <ul>
-        <li><a href="../Home.html">Home</a></li>
-        <li><a href="Sobre Nós.html">Sobre Nós</a></li>
-        <li><a href="Compra.html">Produtos</a></li>
-        <li><a href="Estatisticas da empresa.html">Estatísticas</a></li>
-        <li><a href="Formulário.html">Contato</a></li>
-        <li><a href="Cadastro.html">Cadastro</a></li>
+    
+    <nav id="nav"> <button id="btn-mobile" aria-expanded="false" aria-controls="menu" aria-haspopup="true">
+        Menu
+        <span id="hamburger-icon"></span> </button>
+      
+     <ul id="menu"> <li><a href="Home.html">Home</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Sobre Nós.html">Sobre Nós</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Compra.html">Produtos</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Estatisticas da empresa.html">Estatísticas</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Formulário.html">Contato</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Cadastro.html">Cadastro</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Login.html" class="btn btn-login">Entrar / Login</a></li>
       </ul>
-      <a href="Login.html" class="btn btn-login">Entrar / Login</a>
     </nav>
   </header>
 
@@ -200,6 +203,8 @@
   <footer>
     <p>&copy; 2025 MMC - Máquinas de Costura. Todos os direitos reservados.</p>
   </footer>
+<script src="../assets/js/main.js" defer></script>
 
+    <script src="auth.js" defer></script>
 </body>
 </html>

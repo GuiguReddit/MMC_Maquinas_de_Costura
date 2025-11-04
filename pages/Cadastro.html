@@ -7,18 +7,22 @@
   <link rel="stylesheet" href="../assets/css/styleglobal.css">
 </head>
 <body>
-   <header>
+<header>
     <div class="logo">MMC - Máquinas de Costura</div>
-    <nav>
-     <ul>
-        <li><a href="../Home.html">Home</a></li>
-        <li><a href="../pages/Sobre Nós.html">Sobre Nós</a></li>
-        <li><a href="../pages/Compra.html">Produtos</a></li>
-        <li><a href="../pages/Estatisticas da empresa.html">Estatísticas</a></li>
-        <li><a href="../pages/Formulário.html">Contato</a></li>
-        <li><a href="../pages/Cadastro.html">Cadastro</a></li>
+    
+    <nav id="nav"> <button id="btn-mobile" aria-expanded="false" aria-controls="menu" aria-haspopup="true">
+        Menu
+        <span id="hamburger-icon"></span> </button>
+      
+     <ul id="menu"> <li><a href="Home.html">Home</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Sobre Nós.html">Sobre Nós</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Compra.html">Produtos</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Estatisticas da empresa.html">Estatísticas</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Formulário.html">Contato</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Cadastro.html">Cadastro</a></li>
+        <li><a href="../SITE MMC - Maquinas de Costura/pages/Login.html" class="btn btn-login">Entrar / Login</a></li>
       </ul>
-      <a href="../pages/Login.html" class="btn btn-login">Entrar / Login</a>
+    </nav>
   </header>
   <main>
     <h1>Cadastre-se</h1>
@@ -65,5 +69,8 @@
     <a href="#">Política de Privacidade</a> |
     <a href="#">Contato</a>
   </footer>
+  <script src="../assets/js/main.js" defer></script>
+
+    <script src="auth.js" defer></script>
 </body>
 </html>

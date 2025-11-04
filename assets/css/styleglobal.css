@@ -1085,3 +1085,122 @@ textarea:focus {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* =================================================== */
+/* ====== V0.4 - RESPONSIVIDADE (MENU MOBILE) ======== */
+/* =================================================== */
+
+/* Botão Mobile (Hamburger) */
+#btn-mobile {
+  display: none; /* Escondido no Desktop */
+  background: transparent;
+  border: none;
+  color: #C4976A; /* Dourado Suave */
+  font-weight: 600;
+  padding: 0.5rem;
+  cursor: pointer;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#hamburger-icon {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+#hamburger-icon::before,
+#hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+#hamburger-icon::before {
+  top: -6px;
+}
+
+#hamburger-icon::after {
+  bottom: -6px;
+}
+
+
+/* Regras para telas menores (Tablets e Celulares) */
+@media (max-width: 768px) {
+  
+  /* Esconde o menu <ul> e o gap da <nav> */
+  header nav {
+    gap: 0;
+  }
+
+  header nav ul {
+    display: none; /* Esconde o menu de links */
+    position: absolute;
+    width: 100%;
+    top: 79px; /* Altura do header (padding 1.5rem * 2 + font-size 1.5rem) - ajuste fino */
+    right: 0px;
+    background: #1B3A4B; /* Fundo do header */
+    z-index: 1000;
+    
+    /* Layout vertical */
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  /* Mostra o botão Hamburger */
+  #btn-mobile {
+    display: flex;
+  }
+
+  /* --- Estilo do Menu Aberto (via JS .active) --- */
+
+  #nav.active #menu {
+    display: flex;
+  }
+  
+  /* Animação do ícone para 'X' */
+  #nav.active #hamburger-icon {
+    transform: rotate(45deg);
+  }
+  #nav.active #hamburger-icon::before {
+    transform: rotate(90deg);
+    top: 0;
+  }
+  #nav.active #hamburger-icon::after {
+    transform: rotate(90deg);
+    bottom: 0;
+  }
+
+  /* Links dentro do menu mobile */
+  header nav ul li {
+    width: 100%;
+  }
+
+  header nav ul li a {
+    display: block;
+    padding: 1.5rem 2rem;
+    margin-left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(196, 151, 106, 0.2); /* Linha dourada sutil */
+  }
+
+  /* Botão de Login dentro do menu mobile */
+  header nav ul li .btn-login {
+    text-align: center;
+    border-radius: 0; /* Ocupa toda a largura */
+    margin-top: 1rem;
+    background-color: #C4976A; /* Fundo sólido */
+    color: #fff; /* Texto branco */
+  }
+
+  header nav ul li .btn-login:hover {
+    background-color: #a87f50; /* */
+  }
+}
