@@ -215,11 +215,13 @@ header nav ul {
 }
 
 .hero h1 {
+  color:#1B3A4B;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .hero p {
+  color:#1B3A4B;
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
@@ -1203,4 +1205,94 @@ textarea:focus {
   header nav ul li .btn-login:hover {
     background-color: #a87f50; /* */
   }
+}
+
+/* ======================================= */
+/* v0.5 - ESTILOS DA PÁGINA DE QUIZ        */
+/* ======================================= */
+
+/* Oculta as etapas que não estão ativas */
+.quiz-step {
+    display: none;
+}
+.quiz-step.active {
+    display: block;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr; /* Um botão por linha */
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.quiz-btn {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    width: 100%;
+}
+
+.quiz-btn:hover {
+    background-color: #F5E6D3; /* Bege Claro */
+    border-color: #C4976A; /* Dourado */
+    transform: translateY(-2px);
+}
+
+/* Oculta o container de resultado por padrão */
+#quiz-result {
+    display: none;
+}
+
+/* Estilo do Card de Resultado */
+.recommendation-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 2px solid #C4976A;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #fdfaf5;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.recommendation-card img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    align-self: center;
+}
+
+.recommendation-info {
+    flex: 1;
+}
+
+.recommendation-info h4 {
+    color: #1B3A4B;
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-info p {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+/* Responsividade para o card de resultado */
+@media (min-width: 600px) {
+    .recommendation-card {
+        flex-direction: row;
+        align-items: center;
+    }
+    .recommendation-card img {
+        align-self: flex-start;
+    }
 }
